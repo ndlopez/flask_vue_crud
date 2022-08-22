@@ -13,6 +13,10 @@ app.config.from_object(__name__)
 CORS(app, resources={r'/*':{'origins':'*'}})
 
 #check route
+@app.route('/')
+def port_init():
+    return '<h2>Hi there, testing server out</h2>'
+
 @app.route('/ping',methods=['GET'])
 def ping_me():
     return jsonify('Got data')
