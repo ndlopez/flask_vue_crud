@@ -1,12 +1,12 @@
+/* eslint-disable */
 <template>
-<div><p>{{ msg }}</p></div>
+  <div><p>{{ msg }}</p></div>
 </template>
 <script>
-export default{
-name: 'Ping',
-data(){
-return{msg: 'Hello over there',};
-},
-
+export default {
+  name: 'PingThis',
+  data() {
+    return { msg: 'Hello over there' };
+  },
 };
 </script>
