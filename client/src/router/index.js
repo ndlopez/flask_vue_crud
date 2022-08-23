@@ -1,6 +1,7 @@
 /* eslint-disable */
+import Vue from 'vue';
 import Router from 'vue-router';
-import PingThis from '../components/Ping.vue';
+import PingMe from '../components/Ping.vue';
 
 Vue.use(Router);
 
@@ -11,7 +12,7 @@ export default new Router({
     {
       path: '/ping',
       name:'Ping',
-      component:PingThis,},
+      component:PingMe,},
   ],
 });
 

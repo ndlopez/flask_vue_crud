@@ -4,7 +4,7 @@
 </template>
 <script>
 export default {
-  name: 'PingThis',
+  name: 'PingMe',
   data() {
     return { msg: 'Hello over there' };
   },
