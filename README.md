@@ -4,7 +4,21 @@ This app is based on the following [tutorial](https://testdriven.io/blog/develop
 
 List installed NPM packages:<br>
     $ npm list -g --depth=0
-    
+
+## Operation
+
+### Server:
+    $ python3.8 server/app.py
+
+Serving at: http://localhost:3872/
+
+### Client:
+    $ cd client<br>
+    $ npm install<br>
+    $ npm run serve
+
+Head to: http://localhost:8080
+
 ## Running Environment
 - OS : Windows 11 Pro
 - Vue: 
