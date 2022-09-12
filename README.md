@@ -12,6 +12,11 @@ List installed NPM packages:<br>
 
 Serving at: http://localhost:3872/
 
+*POST using curl*
+
+    $ curl.exe -X POST http://localhost:3872/books -d '{"title": "adsdsaw", "author": "Big Assets", "read": "true"}' -H 'Content-Type: application/json'
+
+
 ### Client:
     $ cd client<br>
     $ npm install<br>

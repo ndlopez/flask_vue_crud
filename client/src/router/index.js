@@ -1,6 +1,6 @@
 /* This file is the router */
 /* eslint-disable */
-import * as Vue from 'vue';
+import Vue from 'vue';
 import Router from 'vue-router';
 import BookThis from '../components/BookThis.vue';
 import PingMe from '../components/PingMe.vue';
