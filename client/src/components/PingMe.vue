@@ -11,7 +11,7 @@ export default {
   name: 'PingMe',
   data() {
     return {
-      msg: '',
+      msg: 'Hallo',
     };
   },
   methods: {
