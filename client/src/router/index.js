@@ -1,7 +1,9 @@
+/* This file is the router */
 /* eslint-disable */
 import Vue from 'vue';
 import Router from 'vue-router';
-import PingMe from '../components/Ping.vue';
+import BookThis from '../components/BookThis.vue';
+import PingMe from '../components/PingMe.vue';
 
 Vue.use(Router);
 
@@ -10,9 +12,13 @@ export default new Router({
   base: process.env.BASE_URL,
   routes:[
     {
+      path: '/',
+      name: 'Books',
+      component: BookThis,
+    },
+    {
       path: '/ping',
-      name:'Ping',
+      name:'PingMe',
       component:PingMe,},
   ],
 });
-
