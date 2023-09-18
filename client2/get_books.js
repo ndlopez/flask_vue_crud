@@ -70,6 +70,26 @@ function del_book(bookId){
     }
 }
 
+async function remove_item(){
+    /*How to remove item without id*/
+    const delBtn = document.getElementsByClassName("delete");
+    let jdx = 0;
+    const data = await get_books();
+    for (let idx= 0;idx<delBtn.length;idx++){
+        delBtn[idx].onclick = function(){
+            const task = this.parentElement.parentElement;
+            task.style.display = "none";
+            for (let kdx = 0; kdx < data.length; kdx++) {
+                if(data[kdx]['author'] == task.childNodes[0].innerHTML){
+                    jdx = kdx;
+                }
+            }
+            console.log("Bye bye ",task.childNodes[0].innerHTML);
+        }
+    }
+    del_book(data[jdx]['id']);
+}
+
 async function edit_book(bookId){
     const data = await get_books();
     mainDiv.appendChild(add_form());
