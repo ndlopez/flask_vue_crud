@@ -2,23 +2,24 @@ const books_url = "http://127.0.0.1:3872/books";
 const mainDiv = document.getElementById("root");
 mainDiv.innerHTML = "<h2>My list of books</h2><button onclick='openNav()'>Add Book</button><hr>";
 
-disp_books();
-
 mainDiv.appendChild(add_form());
 
 let thisId= "";
 
-async function disp_books(){
+(async ()=>{
     const gotBooks = await get_books();
     const tab = document.createElement("table");
 
     let txt = "<tr><th>Author</th><th>Title</th><th>Read?</th><th></th></tr>";
+
     for (let idx=0;idx < gotBooks.length; idx++){
-        txt += `<tr><td>${gotBooks[idx]['author']}</td><td>${gotBooks[idx]['title']}</td><td>${gotBooks[idx]['read']}</td><td><button onclick="edit_book('${gotBooks[idx]['id']}')">Update</button><button onclick="del_book('${gotBooks[idx]['id']}')">Delete</button></td></tr>`;
+        txt += `<tr><td>${gotBooks[idx]['author']}</td><td>${gotBooks[idx]['title']}</td><td>${gotBooks[idx]['read']}</td><td><button onclick="edit_book('${gotBooks[idx]['id']}')">Update</button><button class="delete" onclick="del_book('${gotBooks[idx]['id']}')">Delete</button></td></tr>`;
     }
+
     tab.innerHTML = txt;
     mainDiv.appendChild(tab);
-}
+    //remove_item();
+})();
 
 async function get_books(){
     const response = await fetch(books_url);
