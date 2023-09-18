@@ -29,6 +29,7 @@ async function get_books(){
 }
 
 function add_book(this_author,this_title,this_bool){
+    /* Post to server side */
     fetch(books_url,{
         method: "POST",
         body: JSON.stringify({
@@ -42,6 +43,12 @@ function add_book(this_author,this_title,this_bool){
     })
     .then((response)=>response.json())
     .then((json)=>console.log(json));
+    /* Update client-side */
+    const trEl = document.createElement("TR");
+    trEl.innerHTML = `<td>${postData['author']}</td><td>${postData['title']}</td><td>${postData['read']}</td><td><button>Update</button onclick="edit_book()"><button class="delete" onclick="del_book()">Delete</button></td>`;
+
+    document.getElementsByTagName("tbody")[0].appendChild(trEl);
+    //console.log("new item",tab,trEl);
 }
 
 function del_book(bookId){
