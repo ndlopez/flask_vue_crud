@@ -45,14 +45,22 @@ function add_book(this_author,this_title,this_bool){
 }
 
 function del_book(bookId){
-    /* */
+    /* Remove bookId from server */
     const path = `${books_url}/${bookId}`;
     fetch(path, {
         method: "DELETE",
         body: '',
         headers: { "Content-Type": "application/json; charset=UTF-8"}
     });
-    // disp_books();
+    /* Update gui by hiding bookiD parent*/
+    const delBtn = document.getElementsByClassName("delete");
+    for (let idx=0;idx < delBtn.length;idx++){
+        if (delBtn[idx].outerHTML.includes(bookId)){
+            console.log("Bye bye",delBtn[idx].outerHTML);
+            const task = delBtn[idx].parentElement.parentElement;
+            task.style.display = "none";
+        }
+    }
 }
 
 async function edit_book(bookId){
