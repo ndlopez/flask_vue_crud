@@ -30,19 +30,20 @@ async function get_books(){
 
 function add_book(this_author,this_title,this_bool){
     /* Post to server side */
+    const postData = {
+        title: this_title,
+        author: this_author,
+        read: this_bool
+    }
     fetch(books_url,{
         method: "POST",
-        body: JSON.stringify({
-            'title': this_title,
-            'author': this_author,
-            'read': this_bool
-        }),
+        body: JSON.stringify(postData),
         headers:{
             "Content-type": "application/json;charset=UTF-8"
         }
     })
-    .then((response)=>response.json())
-    .then((json)=>console.log(json));
+    .then((response) => response.json())
+    .then((json) => console.log(json));
     /* Update client-side */
     const trEl = document.createElement("TR");
     trEl.innerHTML = `<td>${postData['author']}</td><td>${postData['title']}</td><td>${postData['read']}</td><td><button>Update</button onclick="edit_book()"><button class="delete" onclick="del_book()">Delete</button></td>`;
