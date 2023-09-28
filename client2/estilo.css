@@ -1,5 +1,29 @@
+body{
+    background-color: #bed2e0;
+    color:#2e4054;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+table{
+    width:100%;
+    border-collapse: collapse;
+}
+table tr {
+    border-bottom: 1px solid #2e4054;
+}
+table td, table th{
+    padding: 4px 10px;
+}
+table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+table th{
+    text-align: left;
+    background-color: #2e4054;
+    color: #bed2e0;
+}
 .modal{
-    display: none; /* Hidden by default */
+    /*display: none;  Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -12,15 +36,23 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .modal-content{
-    background-color: #fefefe;
+    background-color: #bed2e0;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;  
+    width: 70%;  
+}
+.delete{
+    color: #cc274c;
 }
 .close {
-    color: #aaaaaa;
-    float: right;
+    position: absolute;
+    top: 15%;
+    color: #2e4054;
+    right:15%;
     font-size: 28px;
     font-weight: bold;
+}
+input[type="text"]{
+    width: 80%;
 }
